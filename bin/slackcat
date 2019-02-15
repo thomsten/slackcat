@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'httmultiparty'
-require 'trollop'
+require 'optimist'
 
 class Slackcat
   include HTTMultiParty
@@ -90,7 +90,7 @@ class Slackcat
 
 end
 
-opts = Trollop::options do
+opts = Optimist::options do
   opt :token,           'Slack API token',            type: :string,  short: 'k', default: ENV.fetch('SLACK_TOKEN', nil)
   opt :channels,        'Channels to share',          type: :string,  short: 'c', default: ''
   opt :groups,          'Groups to share',            type: :string,  short: 'g', default: ''
